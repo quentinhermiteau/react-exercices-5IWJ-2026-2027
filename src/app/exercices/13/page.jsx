@@ -22,6 +22,16 @@ export default function CounterWithUndoRedo() {
 
   return (
     <div>
+      <div id="notice">
+        <p>
+          Gère toute la gestion de ce compteur avec useReducer, on doit pouvoir
+          incrémenter et décrémenter.
+        </p>
+        <p>
+          Mais aussi, on doit pouvoir faire un undo ou un redo et donc revenir à
+          la valeur précédente du compteur.
+        </p>
+      </div>
       <h1>Counter: {state.count}</h1>
       <button className="link" onClick={handleIncrement}>
         Increment

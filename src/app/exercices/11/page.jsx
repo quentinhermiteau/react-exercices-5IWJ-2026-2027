@@ -15,7 +15,7 @@ export default function Counter() {
   return (
     <main>
       <div id="notice">
-        À l'aide de useEffect et setInterval, faire en sorte que le compteur
+        À l'aide de useReducer et setInterval, faire en sorte que le compteur
         s'incrémente automatiquement toutes les secondes.
       </div>
       <h1>{count}</h1>

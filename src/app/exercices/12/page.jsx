@@ -36,6 +36,7 @@ export default function MultistepFormReducer() {
   if (currentStep === 1) {
     return (
       <form onSubmit={handleSubmit}>
+        <div id="notice">Refacto ce formulaire en utilisant useReducer</div>
         <h2>Personal Information</h2>
         <div>
           <label>Step {currentStep} of 3</label>
