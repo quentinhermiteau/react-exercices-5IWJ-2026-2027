@@ -18,13 +18,13 @@ export default function Exo1() {
         informations de l'utilisateur soit affichées dans la div badge
       </div>
       <div className="badge">
-        <img alt={``} src={``} />
+        <img alt={name} src={img} />
         <div>
-          <h4>NAME</h4>
-          <p>@HANDLE</p>
+          <h4>{name}</h4>
+          <p>@{handle}</p>
         </div>
       </div>
-      <div>Date du jour: </div>
+      <div>Date du jour: {getDate()}</div>
     </>
   );
 }
