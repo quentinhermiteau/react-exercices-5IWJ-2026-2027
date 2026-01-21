@@ -1,6 +1,19 @@
 "use client";
 
+import { useState } from "react";
+
 export default function Exo4() {
+  const [inputText, setInputText] = useState('')
+
+  const handleInputChange = (event) => {
+    if (event.target.value.length > 10) {
+      alert('character limit exceeded')
+      return
+    }
+
+    setInputText(event.target.value)
+  }
+
   return (
     <>
       <div id="notice">
@@ -15,7 +28,7 @@ export default function Exo4() {
       </div>
       <section>
         <h1>Character Limit</h1>
-        <input placeholder="Enter some text" />
+        <input placeholder="Enter some text" value={inputText} onChange={handleInputChange} />
       </section>
     </>
   );
