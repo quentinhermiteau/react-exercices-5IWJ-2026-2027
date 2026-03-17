@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 
-function Logo() {
+const Logo = memo(() => {
   console.log("render logo");
   return (
     <div>
       <h1>Logo</h1>
     </div>
   );
-}
+});
 
 export default function Page() {
   const [count, setCount] = useState(0);
