@@ -10,7 +10,7 @@ export default function StopwatchV1() {
   let id = null;
 
   const handleClick = () => {
-    if (running === false) {
+    if (!running) {
       id = window.setInterval(() => {
         setSeconds((s) => s + 1);
       }, 1000);
