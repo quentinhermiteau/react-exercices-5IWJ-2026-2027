@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Flag from "./Flag";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import Wave from "./Wave";
 
 export default function Page() {
   const [languageIndex, setLanguageIndex] = useState(0);
@@ -21,6 +21,21 @@ export default function Page() {
     setNameIndex(nextIndex);
   };
 
+  const options = useMemo(
+    () => ({
+      index: languageIndex,
+    }),
+    [languageIndex],
+  );
+
+  const getSentence = useCallback(() => {
+    console.log(languages[languageIndex], names[nameIndex]);
+  }, [languageIndex, nameIndex]);
+
+  useEffect(() => {
+    getSentence();
+  }, [languageIndex, nameIndex]);
+
   return (
     <main>
       <h1>
@@ -28,7 +43,7 @@ export default function Page() {
       </h1>
       <button onClick={handleNextLanguageClick}>Next language</button>
       <button onClick={handleNextNameClick}>Next name</button>
-      <Flag />
+      <Wave options={options} />
     </main>
   );
 }
